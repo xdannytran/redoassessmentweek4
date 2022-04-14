@@ -15,7 +15,7 @@ app.get("/api/compliment", (req, res) => {
   ];
 
   // choose random compliment
-  let randomIndex = Math.floor(Math.random() * compliments.length);
+  let randomIndex = Math.floor(Math.random() * compliments.length-1);
   let randomCompliment = compliments[randomIndex];
 
   res.status(200).send(randomCompliment);
@@ -34,6 +34,27 @@ app.get("/api/fortune", (req, res) => {
 
 })
 
+app.get("/api/feeling", (req, res) => {
+  const feeling = ["Great but hungry",
+              "Sad and scared",
+              "LETSGOOOO",
+          ];
+  let randomIndex = Math.floor(Math.random() * feeling.length);
+  let randomFeeling = feeling [randomIndex];
+
+  res.status(200).send(randomFeeling);
+
+})
 
 
+app.get("/api/question", (req, res) => {
+  const question = ["How are you today?",
+              "Can we go out?",
+              "Are you hungry",
+          ];
+  let randomIndex = Math.floor(Math.random() * question.length);
+  let randomQuestion = question [randomIndex];
+
+  res.status(200).send(randomQuestion);
+})
 app.listen(4000, () => console.log("Server running on 4000"));
